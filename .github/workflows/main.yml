@@ -216,7 +216,7 @@ jobs:
           done < <(find ${PWD} -name \*.ko)
           
           mkdir -p /source/output/iptables
-          git clone -c http.sslVerify=false git://git.netfilter.org/iptables iptables
+          git clone -c http.sslVerify=false --depth 1 --branch v1.8.3 git://git.netfilter.org/iptables iptables
           cd iptables
           git checkout $(git describe --abbrev=0)
           . ./autogen.sh
